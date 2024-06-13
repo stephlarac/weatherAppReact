@@ -29,7 +29,7 @@ body {
 }
 
 .arrow{
-  background-image: url("../images/arrow.png");
+  background-image: url("./images/arrow.png");
   background-repeat: no-repeat; 
   background-size: cover;
   background-position: 20px -55px;
