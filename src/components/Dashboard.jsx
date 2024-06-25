@@ -99,17 +99,18 @@ function Dashboard(){
       }, []);
     return(
         <div className="dashboard">
-            {cords.clicked ? 
             <div className="after-click" >
-                {forecast.map((day) => {
-                    return <SomeInfo key={day.id} weekDay={day.date} position={day.position} temp={day.temp} wind={day.wind} hum={day.hum} img={day.img} />
-                })}
-            </div> : 
-            <div className="before-click">
-                <div className="arrow"></div>
-                <div className="type-instruction">Type your city and know the weather!</div>
-            </div>}
-            
+                {cords.clicked ? 
+                <div className="after-click" >
+                    {forecast.map((day) => {
+                        return <SomeInfo key={day.id} weekDay={day.date} position={day.position} temp={day.temp} wind={day.wind} hum={day.hum} img={day.img} />
+                    })}
+                </div> : 
+                <div className="before-click">
+                    <div className="arrow"></div>
+                    <div className="type-instruction">Type your city and know the weather!</div>
+                </div>}
+            </div>
         </div>
     )
 }

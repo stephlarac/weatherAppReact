@@ -11,13 +11,14 @@ html {
 
 body {
     background-color: #7575CA;
+    padding: 2% 2.5%;
   }
 
 .content {
     background-color: #333063;
     width: 95%;
-    height: 88%;
-    margin: 2.5%;
+    height: 92%;
+    margin-bottom: 5px;
     padding: 30px;
     position: absolute;
 }
@@ -30,23 +31,24 @@ body {
 
 .arrow{
   background-image: url("./images/arrow.png");
+  background-origin: border-box;
   background-repeat: no-repeat; 
-  background-size: cover;
-  background-position: 20px -55px;
+  background-size: 95%;
+  background-position: -50px -65px;
   filter: brightness(0) invert(1);
   height: 420px;
   width: 470px;
   position: absolute;
   z-index: 1;
   bottom: 0%;
-  right: 10%;
+  right: 3%;
 }
 
 .type-instruction{
   font-family: "Indie Flower", sans-serif;
   font-size: 60px;
   position: relative;
-  top: 60%;
+  padding-top: 20%;
   text-align: center;
   z-index: 1;
 }
@@ -67,6 +69,7 @@ body {
     height: 30px;
     margin: 30px 10%;
     width: 80%;
+    display: inline-block;
 }
 
 .search-bar {
@@ -76,7 +79,7 @@ body {
     background-color: #353063;
     color: #FCFCFD; 
     height: 90%;
-    width: 90%;
+    width: 70%;
     float: left;
     padding-left: 5px;
     z-index: 1;
@@ -92,12 +95,13 @@ body {
     background: none;
     border: none;
     color: #FCFCFD;
+    float: right;
   }
 
   .main-weather {
     background-color: #9CAFFF;
     width: 80%;
-    height: 350px;
+    height: 70%;
     border-radius: 10px;
     margin: 30px 10%;
     display: flex;
@@ -142,6 +146,7 @@ body {
   .after-click{
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
 
   .before-click{
@@ -170,3 +175,105 @@ body {
     font-weight: 1000;
     margin-bottom: 15%;
   }
+
+  /* Laptops & small screens  */
+  @media (max-width: 1060px) {
+    .arrow{
+      background-position: 45px -40px; /*derecha(+) arriba(-) */
+      height: 85%;
+      width: 45%;
+      bottom: 1%;
+      right: 2%;
+    }
+
+    .type-instruction{
+      font-size: 55px;
+      top: 65%;
+    }
+    
+  } 
+
+  /* Tablets */
+@media (max-width: 860px) {
+  .content{
+    height: auto;
+  }
+
+  .arrow{
+    height: 0;
+    width: 0;
+  }
+
+  .type-instruction{
+    font-size: 50px;
+    top: 40%;
+  }
+
+  .after-click{
+    flex-direction: column;
+  }
+
+  .info-square{
+    width: 100%;
+    height: 90px;
+    margin: 4% .8% 0 .8%;
+    border: .5px  #FCFCFD ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .week-day{
+    margin-left: 5%;
+  }
+
+  .sec-temp{
+    font-size: 30px;
+    font-weight: 1000;
+    margin-bottom: 0;
+  }
+
+  .main-temp{
+    font-size: 70px;
+  }
+} 
+
+/* Cellphones */
+@media (max-width: 645px) {
+
+  .info-square{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 20% 80%;
+  }
+
+  .week-day{
+    grid-column: 1;
+    grid-row: 1;
+   }
+ 
+   .sec-icon{
+    grid-column: 1;
+    grid-row: 2;
+   }
+
+   .sec-temp{
+    grid-column: 2;
+    grid-row: 2;
+   }
+
+   .extra-wrapper{
+    grid-column: 3;
+    grid-row: 2;
+   }
+
+   .main-weather {
+    justify-content: space-around;
+  }
+
+   .main-temp{
+    font-size: 50px;
+  }
+
+}
